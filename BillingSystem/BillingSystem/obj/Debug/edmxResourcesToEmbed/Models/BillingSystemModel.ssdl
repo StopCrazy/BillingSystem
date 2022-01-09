@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BillingDetailsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'BillingDetails.dbo.Accounts' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="PurchaseingTime" />
+      <PropertyRef Name="ClassId" />
+      <PropertyRef Name="ClassName" />
+      <PropertyRef Name="ItemName" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="PurchaseingTime" Type="datetime" Nullable="false" />
+    <Property Name="ClassId" Type="int" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ItemClass">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="int" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Accounts_ItemClass">
+    <End Role="ItemClass" Type="Self.ItemClass" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemClass">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BillingDetailsModelStoreContainer">
+    <EntitySet Name="ItemClass" EntityType="Self.ItemClass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Accounts].[PurchaseingTime] AS [PurchaseingTime], 
+    [Accounts].[ClassId] AS [ClassId], 
+    [Accounts].[ClassName] AS [ClassName], 
+    [Accounts].[ItemName] AS [ItemName], 
+    [Accounts].[Price] AS [Price], 
+    [Accounts].[Remark] AS [Remark]
+    FROM [dbo].[Accounts] AS [Accounts]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Accounts_ItemClass" Association="Self.FK_Accounts_ItemClass">
+      <End Role="ItemClass" EntitySet="ItemClass" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

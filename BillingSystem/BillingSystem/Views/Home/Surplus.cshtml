@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icon & title -->
+    <link rel="icon" href="@Url.Content("~/content/cash-coin.svg")" />
+    <title> 記帳系統 </title>
+
+    <!-- import bootstrap4(bootstrap/icon/CSS & jquery library & popper JS & JS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="@Url.Content("~/content/layout-stylesheet.css")" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!-- 固定顯示的部分 -->
+    <div id="layout_div01">
+        <h4 id="layout_head01"> <i class="bi bi-pencil-square"></i> 快速記帳 </h4>
+    </div>
+
+    <!-- 頁面分2部分: 左:選擇功能/右:近期收支 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <ul class="nav nav-tabs nav-justified" id="layout_ul01">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index", "Home")"> 來記帳 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("PieChart", "Home")"> 收支圓餅圖 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"> 本月盈餘 </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

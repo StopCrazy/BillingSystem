@@ -1,0 +1,20 @@
+﻿body {
+}
+
+#layout_div01 {
+    border-radius: 15px 50px 30px;
+    margin-right: 90%;
+    padding: 20px;
+}
+
+#layout_head01 {
+    border-radius: 15px 50px 30px;
+    background-color: MediumSeaGreen;
+    text-align: center;
+    font-family: 'NSimSun', 'DFKai-SB';
+    color: white;
+}
+
+#layout_ul01 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}

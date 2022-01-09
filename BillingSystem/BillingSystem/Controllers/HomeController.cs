@@ -26,5 +26,19 @@ namespace BillingSystem.Controllers
 
             return View();
         }
+
+        public ActionResult PieChart() 
+        {
+            ViewBag.Message = "你的本月各項目收支圓餅圖.";
+
+            return View();
+        }
+
+        public ActionResult Surplus()
+        {
+            ViewBag.Message = "你的本月盈餘.";
+
+            return View();
+        }
     }
 }
