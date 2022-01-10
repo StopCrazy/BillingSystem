@@ -162,6 +162,9 @@
   <ItemGroup>
     <Content Include="App_Data\BillingDetails.mdf" />
     <Content Include="Content\cash-coin.svg" />
+    <Content Include="Content\JavaScript.js" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery-ui.min.js" />
     <Content Include="Content\layout-stylesheet.css" />
     <Content Include="Models\BillingSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

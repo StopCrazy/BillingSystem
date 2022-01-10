@@ -1,4 +1,5 @@
 ﻿body {
+    background-color:antiquewhite;
 }
 
 #layout_div01 {
@@ -17,4 +18,58 @@
 
 #layout_ul01 {
     font-family: 'Microsoft YaHei', 'DFKai-SB';
+    font-style: italic;
+    font-weight: bolder;
+    background-color: Violet;
+}
+
+#layout_div02{
+    margin-left:5%;
+    margin-top:5%;
+    padding:5px;
+}
+
+#layout_head02 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}
+
+#layout_head03 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+    margin-top: 20pt;
+}
+
+#layout_div03 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}
+
+#layout_div04 {
+    font-weight: bolder;
+}
+
+#layout_div05 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}
+
+#layout_head04 {
+    margin-top: 20pt;
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}
+
+#layout_head05 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+}
+
+.layout_input1 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+    font-size: 14px;
+}
+
+#layout_head06 {
+    font-family: 'Microsoft YaHei', 'DFKai-SB';
+    margin-top: 23pt;
+}
+
+#flotcontainer {
+    width: 500px;
+    height: 400px;
 }
